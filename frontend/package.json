@@ -41,5 +41,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://mern-ecommerce-api.vercel.app/"
+  "proxy": "https://mern-ecommerce-api.vercel.app/api/v1/"
 }
