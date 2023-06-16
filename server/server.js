@@ -1,7 +1,7 @@
 const { readdirSync } = require('fs');
 const express = require('express');
 const mongoose = require('mongoose');
-// const cors = require('cors');
+const cors = require('cors');
 const morgan = require('morgan');
 const multer = require('multer');
 const helmet = require('helmet');
@@ -25,6 +25,7 @@ const limiter = rateLimit({
 app.use(express.json());
 app.use(express.static('public'));
 app.use(express.urlencoded({extended: false}));
+app.use(cors());
 
 app.use(helmet());
 app.use(morgan('dev'));
@@ -32,11 +33,11 @@ app.use(cookieParser());
 app.use(mongoSanitize());
 app.use(limiter)
 
-// app.use(cors({
-//   origin: ["https://mern-ecommerce-frontend-six.vercel.app"],
-//   methods: ["POST", "GET"],
-//   credentials: true
-// }));
+app.use(cors({
+  origin: ["https://mern-ecommerce-frontend-six.vercel.app"],
+  methods: ["POST", "GET"],
+  credentials: true
+}));
 
 
 //Router middleware
