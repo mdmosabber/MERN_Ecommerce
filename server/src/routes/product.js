@@ -6,7 +6,7 @@ const {upload} = require('../utils/fileUpload');
 
 router.post('/product',verifyToken,isAdmin,upload.single("image"),productController.create);
 router.put('/product/:id',verifyToken,isAdmin,upload.single("image"),productController.update);
-router.get('/products/', productController.view);
+router.get('/products', productController.view);
 router.get('/product/:id', productController.viewById);
 router.delete('/product/:id',verifyToken,isAdmin,productController.delete);
 
