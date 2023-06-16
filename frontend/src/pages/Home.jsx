@@ -17,7 +17,7 @@ const Home = () => {
 
   const loadProducts = async () => {
     try {
-      const { data } = await axios.get('/api/v1/products');
+      const { data } = await axios.get('/products');
       setProducts(data.products);
     } catch (error) {
       console.log(error);
