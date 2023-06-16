@@ -33,6 +33,11 @@ app.use(cookieParser());
 app.use(mongoSanitize());
 app.use(limiter)
 
+app.use(cors({
+  origin: ["https://mern-ecommerce-frontend-six.vercel.app"],
+  methods: ["POST", "GET"],
+  credentials: true
+}));
 
 
 //Router middleware
